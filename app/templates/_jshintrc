@@ -1,0 +1,17 @@
+{
+  "bitwise": true,
+  "curly": true,
+  "eqeqeq": true,
+  "forin": true,
+  "latedef": true,
+  "noempty": true,
+  "maxcomplexity": 11,
+  "maxdepth": 5,
+  "maxparams": 30,
+  "undef": true,
+  "browser": true,
+  "globals":{
+    "module":true,
+    "require":true
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "name": "kata",
+  "version": "0.0.0",
+  "description": "TDD Kata Tools",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha index.spec.js"
+  },
+  "author": "Anthony Garreffa",
+  "license": "BSD-2-Clause",
+  "devDependencies": {
+    "mocha": "~1.18.2",
+    "sinon": "~1.9.1",
+    "chai": "~1.9.1",
+    "grunt": "~0.4.4",
+    "grunt-contrib-jshint": "~0.10.0",
+    "grunt-contrib-watch": "~0.6.1",
+    "grunt-mocha-test": "~0.10.2",
+    "grunt-clear": "~0.2.1",
+    "load-grunt-tasks": "~0.4.0"
+  }
+}
