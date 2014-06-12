@@ -41,8 +41,10 @@ var ToyGenerator = yeoman.generators.Base.extend({
   app: function () {
     this.mkdir('src');
     this.copy('_package.json', 'package.json');
+    this.copy('_bower.json', 'bower.json');
     this.copy('_gruntfile.js', 'gruntfile.js');
     this.copy('_jshintrc', '.jshintrc');
+    this.copy('_bowerrc', '.bowerrc');
 
     this.copy('_empty.file', 'src/' + this.title + '.js');
     this.template('_test.spec.js', 'src/' + this.title + '.spec.js');
