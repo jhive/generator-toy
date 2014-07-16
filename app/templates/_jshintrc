@@ -12,6 +12,9 @@
   "browser": true,
   "globals":{
     "module":true,
-    "require":true
+    "require":true,
+    "console":true,
+    "describe":true,
+    "it":true
   }
 }
