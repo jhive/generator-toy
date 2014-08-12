@@ -10,6 +10,7 @@
   "maxparams": 30,
   "undef": true,
   "browser": true,
+  "expr":true,
   "globals":{
     "module":true,
     "require":true,
