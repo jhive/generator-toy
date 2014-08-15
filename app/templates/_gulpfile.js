@@ -16,7 +16,9 @@ gulp.task('jshint', function(){
 gulp.task('test', ['jshint'], function(){
   gulp.src('src/**/*.spec.js')
     .pipe(mocha({reporter: 'spec'}))
-    .on('error', function() { });
+    .on('error', function(err) {
+      if(err && err.stack){ console.log(err.stack); }
+    });
 });
 
 //Need to catch errors so mocha doesn't blow up the watcher
