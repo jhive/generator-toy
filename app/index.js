@@ -46,18 +46,26 @@ var ToyGenerator = yeoman.generators.Base.extend({
 
   app: function () {
     this.mkdir('src');
+
     this.copy('_package.json', 'package.json');
-    this.copy('_bower.json', 'bower.json');
     this.copy('_jshintrc', '.jshintrc');
     this.copy('_bowerrc', '.bowerrc');
     this.copy('_gitignore', '.gitignore');
 
     this.copy('_' + this.type + '_gulpfile.js', 'gulpfile.js');
 
-    this.copy('_empty.file', 'src/' + this.title + '.js');
-    this.template('_test.spec.js', 'src/' + this.title + '.spec.js');
 
+    if(this.type === 'node'){
+      this.copy('_empty.file', 'src/' + this.title + '.js');
+      this.template('_test.spec.js', 'src/' + this.title + '.spec.js');
+    }
 
+    if(this.type === 'browser'){
+      this.copy('_bower.json', 'bower.json');
+      this.mkdir('src/app');
+      this.copy('_empty.file', 'src/app/' + this.title + '.js');
+      this.template('_test.spec.js', 'src/app/' + this.title + '.spec.js');
+    }
 
   }
 });
