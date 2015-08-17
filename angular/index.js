@@ -1,4 +1,5 @@
 'use strict';
+
 var util = require('util');
 var path = require('path');
 var yeoman = require('yeoman-generator');
@@ -29,17 +30,11 @@ var ToyGenerator = yeoman.generators.Base.extend({
     var prompts = [{
       name: 'title',
       message: 'What do you want to call your toy?'
-    },
-    {
-      name: 'type',
-      message: 'What sort of toy do you need?',
-      type: 'list',
-      choices: ['node', 'browser']
     }];
 
     this.prompt(prompts, function (props) {
       this.title = props.title;
-      this.type = props.type;
+
       done();
     }.bind(this));
   },
@@ -48,17 +43,12 @@ var ToyGenerator = yeoman.generators.Base.extend({
     this.mkdir('src');
     this.copy('_package.json', 'package.json');
     this.copy('_bower.json', 'bower.json');
+    this.copy('_gulpfile.js', 'gulpfile.js');
     this.copy('_jshintrc', '.jshintrc');
     this.copy('_bowerrc', '.bowerrc');
-    this.copy('_gitignore', '.gitignore');
-
-    this.copy('_' + this.type + '_gulpfile.js', 'gulpfile.js');
 
     this.copy('_empty.file', 'src/' + this.title + '.js');
     this.template('_test.spec.js', 'src/' + this.title + '.spec.js');
-
-
-
   }
 });
 

@@ -1,7 +1,7 @@
-var gulp = require('gulp'),
-  jshint = require('gulp-jshint'),
-  mocha = require('gulp-mocha'),
-  clear = require('clear');
+var gulp = require('gulp');
+var jshint = require('gulp-jshint');
+var mocha = require('gulp-mocha');
+var clear = require('clear');
 
 gulp.task('clear', function(){
   clear();
